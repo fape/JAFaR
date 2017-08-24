@@ -27,6 +27,8 @@ This file is part of Fatshark© goggle rx module project (JAFaR).
 #define USE_DIVERSITY
 //#define USE_OLED
 
+#define DISABLE_FILTERING
+
 //uncomment this to use the I2C OLED version (PCB 4.1 beta)
 //#define USE_I2C_OLED
 
@@ -103,10 +105,10 @@ This file is part of Fatshark© goggle rx module project (JAFaR).
 
 //#define BUZPIN 0 //digitalWrite(BUZPIN, HIGH);TV.delay(50);digitalWrite(BUZPIN, LOW);pinMode(BUZPIN, OUTPUT); //UP digitalWrite(BUZPIN,LOW);
 #define SELECT_OSD {digitalWrite(SW_CTRL1, HIGH);digitalWrite(SW_CTRL2, HIGH);}
-#define SELECT_A {digitalWrite(SW_CTRL1, LOW);  digitalWrite(SW_CTRL2, HIGH);}
-#define SELECT_B {digitalWrite(SW_CTRL1, HIGH);  digitalWrite(SW_CTRL2, LOW);}
+#define SELECT_A {digitalWrite(SW_CTRL1, LOW);digitalWrite(SW_CTRL1, LOW);digitalWrite(SW_CTRL1, LOW);  digitalWrite(SW_CTRL2, HIGH);}
+#define SELECT_B {digitalWrite(SW_CTRL2, LOW);digitalWrite(SW_CTRL1, LOW);digitalWrite(SW_CTRL1, LOW);  digitalWrite(SW_CTRL1, HIGH);}
 
-#define RX_HYST 0 //~10%
+#define RX_HYST 5 //~10%
 
 // Channels with their Mhz Values
 const uint16_t channelFreqTable[] PROGMEM = {

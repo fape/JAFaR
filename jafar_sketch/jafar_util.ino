@@ -157,9 +157,13 @@ void set_and_wait(uint8_t band, uint8_t menu_pos) {
     //fc = 8HZ
     //floating point conversion 10 bit > shift 2^10 -> 1024
 #define ALPHA 25
+#ifndef DISABLE_FILTERING
     int16_t rssi_b_norm_filt = ((ALPHA * (rssi_b_norm - prev_rssi_b_norm)) / 1024) + prev_rssi_b_norm;
     int16_t rssi_a_norm_filt = ((ALPHA * (rssi_a_norm - prev_rssi_a_norm)) / 1024) + prev_rssi_a_norm;
-
+#else
+    int16_t rssi_b_norm_filt  = (rssi_b_norm+prev_rssi_b_norm*3)/4;
+    int16_t rssi_a_norm_filt  = (rssi_a_norm+prev_rssi_a_norm*3)/4;
+#endif
 
 #ifdef DEBUG
     /* Serial.print("A min:");

@@ -25,6 +25,7 @@ This file is part of Fatshark© goggle rx module project (JAFaR).
 
 //ONLY ONE OF THE FOLLOWING:
 #define USE_DIVERSITY
+#define USE_DUAL_CAL
 //#define USE_OLED
 
 #define DISABLE_FILTERING
@@ -66,7 +67,7 @@ This file is part of Fatshark© goggle rx module project (JAFaR).
 
 #define JAFARE_DEBOUCE_TIME 180
 
-#define TIMER_INIT_VALUE 5.0
+#define TIMER_INIT_VALUE 3.5
 #define CH1 2
 #define CH2 3
 #define CH3 4
@@ -76,6 +77,11 @@ This file is part of Fatshark© goggle rx module project (JAFaR).
 #define EEPROM_ADR_RSSI_MIN_H 3
 #define EEPROM_ADR_RSSI_MAX_L 4
 #define EEPROM_ADR_RSSI_MAX_H 5
+
+#define EEPROM_ADR_RSSI_MIN_B_L 6
+#define EEPROM_ADR_RSSI_MIN_B_H 7
+#define EEPROM_ADR_RSSI_MAX_B_L 8
+#define EEPROM_ADR_RSSI_MAX_B_H 9
 
 #define EEPROM_ADDR_LAST_BAND_ID 15
 #define EEPROM_ADDR_LAST_FREQ_ID 16
